@@ -1,24 +1,69 @@
+/* ===========================
+   GOOGLE RESET
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0f172a;
-    color:white;
+    font-family:'Manrope',sans-serif;
+    background:#0A0A0A;
+    color:#FFFFFF;
+    overflow-x:hidden;
 }
 
-h1{
-    font-size:50px;
-    margin-top:120px;
-    text-align:center;
+/* ===========================
+   COLORS
+=========================== */
+
+:root{
+
+    --bg:#0A0A0A;
+    --surface:#141414;
+    --card:#1A1A1A;
+
+    --white:#ffffff;
+    --text:#A1A1AA;
+
+    --accent:#7C3AED;
+
+    --border:#2A2A2A;
+
 }
 
-p{
-    text-align:center;
-    margin-top:20px;
-    font-size:20px;
-    color:#cbd5e1;
+/* ===========================
+   COMMON
+=========================== */
+
+section{
+
+    width:100%;
+    padding:100px 10%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
 }
