@@ -714,54 +714,591 @@ section {
    ABOUT
 ========================================================= */
 
-.about {
+/* =========================================================
+   ABOUT — BENTO / FLASH CARD DESIGN
+========================================================= */
 
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(124,58,237,0.025)
-        );
+.about {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    left: -180px;
+    top: 20%;
+    border-radius: 50%;
+    background: rgba(124, 58, 237, 0.10);
+    filter: blur(110px);
+    pointer-events: none;
 }
 
 .about-container {
+    max-width: 1150px;
+    margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.35fr 0.65fr;
 
-    gap: 70px;
+    grid-template-areas:
+        "main education"
+        "focus software"
+        "embedded learning";
 
-    align-items: start;
+    gap: 18px;
+
+    position: relative;
+    z-index: 2;
 }
 
-.about-content {
+
+/* =========================================================
+   MAIN ABOUT CARD
+========================================================= */
+
+.about-main-card {
+
+    grid-area: main;
+
+    min-height: 300px;
+
+    padding: 38px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 26px;
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.018)
+        );
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,0.22);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.about-main-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(124,58,237,0.14);
+
+    filter: blur(55px);
+
+    pointer-events: none;
+}
+
+.about-main-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(124,58,237,0.40);
+
+    box-shadow:
+        0 25px 65px rgba(124,58,237,0.12);
+}
+
+
+.about-card-number {
+
+    color: var(--accent-light);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.about-main-card h3 {
+
+    max-width: 720px;
+
+    color: var(--white);
+
+    font-size: clamp(27px, 3vw, 42px);
+
+    line-height: 1.12;
+
+    letter-spacing: -1.4px;
+
+    margin-bottom: 18px;
+}
+
+.about-main-card h3 span {
+
+    color: var(--accent-light);
+}
+
+
+.about-main-card > p {
+
+    max-width: 680px;
 
     color: var(--text);
 
-    font-size: 16px;
+    font-size: 15px;
 
-    line-height: 1.9;
+    line-height: 1.8;
+
+    margin-bottom: 25px;
 }
 
-.about-content p {
 
-    margin-bottom: 22px;
+/* =========================================================
+   FOCUS TAGS
+========================================================= */
+
+.about-focus {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
 }
 
-.about-content strong {
+.about-focus span {
+
+    padding: 9px 13px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(124,58,237,0.10);
+
+    border:
+        1px solid rgba(124,58,237,0.24);
+
+    color: #DDD3FF;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.about-focus span:hover {
+
+    background:
+        rgba(124,58,237,0.18);
+
+    border-color:
+        rgba(167,139,250,0.55);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   STANDARD ABOUT CARDS
+========================================================= */
+
+.about-card {
+
+    min-height: 230px;
+
+    padding: 27px;
+
+    border-radius: 24px;
+
+    border:
+        1px solid rgba(255,255,255,0.09);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.012)
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.about-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    right: -70px;
+    bottom: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(124,58,237,0.12);
+
+    filter: blur(35px);
+}
+
+.about-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(124,58,237,0.40);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124,58,237,0.075),
+            rgba(255,255,255,0.015)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(124,58,237,0.10);
+}
+
+
+/* =========================================================
+   GRID POSITIONING
+========================================================= */
+
+.about-card:nth-of-type(2) {
+    grid-area: education;
+}
+
+.about-card:nth-of-type(3) {
+    grid-area: focus;
+}
+
+.about-card:nth-of-type(4) {
+    grid-area: software;
+}
+
+.about-card-wide {
+    grid-area: embedded;
+}
+
+.about-learning {
+    grid-area: learning;
+}
+
+
+/* =========================================================
+   CARD LABEL
+========================================================= */
+
+.about-card-label {
+
+    color: var(--accent-light);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 16px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CARD ICON / MONOGRAM
+========================================================= */
+
+.about-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(124,58,237,0.12);
+
+    border:
+        1px solid rgba(124,58,237,0.25);
+
+    color: var(--accent-light);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.about-card h3 {
+
+    color: var(--white);
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 10px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.about-card p {
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.about-card small {
+
+    color: #777780;
+
+    font-size: 11px;
+
+    margin-top: 10px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LEARNING CARD
+========================================================= */
+
+.about-learning {
+
+    justify-content: flex-start;
+}
+
+.about-learning h3 {
+
+    font-size: 23px;
+
+    margin-bottom: 19px;
+}
+
+
+.learning-list {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+}
+
+.learning-list span {
+
+    display: block;
+
+    padding: 10px 12px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    border:
+        1px solid rgba(255,255,255,0.07);
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.learning-list span:hover {
+
+    border-color:
+        rgba(124,58,237,0.35);
+
+    background:
+        rgba(124,58,237,0.08);
 
     color: var(--white);
 }
 
-.about-content .intro {
 
-    font-size: 19px;
+/* =========================================================
+   MOBILE ABOUT
+========================================================= */
 
-    color: var(--text-light);
+@media (max-width: 900px) {
+
+    .about-container {
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+            "main main"
+            "education focus"
+            "software learning"
+            "embedded embedded";
+
+        gap: 15px;
+    }
+
+    .about-main-card {
+
+        min-height: 280px;
+    }
+
+    .about-card {
+
+        min-height: 210px;
+    }
 }
 
 
+@media (max-width: 650px) {
+
+    .about-container {
+
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "main"
+            "education"
+            "focus"
+            "software"
+            "embedded"
+            "learning";
+
+        gap: 13px;
+    }
+
+    .about-main-card {
+
+        min-height: auto;
+
+        padding: 26px;
+
+        border-radius: 21px;
+    }
+
+    .about-main-card h3 {
+
+        font-size: 28px;
+
+        line-height: 1.15;
+    }
+
+    .about-main-card > p {
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    .about-card {
+
+        min-height: auto;
+
+        padding: 23px;
+
+        border-radius: 20px;
+    }
+
+    .about-card h3 {
+
+        font-size: 20px;
+    }
+
+    .about-card p {
+
+        font-size: 13px;
+    }
+
+    .about-focus {
+
+        gap: 7px;
+    }
+
+    .about-focus span {
+
+        font-size: 10px;
+
+        padding: 8px 11px;
+    }
+}
 /* =========================================================
    ABOUT DETAIL CARDS
 ========================================================= */
